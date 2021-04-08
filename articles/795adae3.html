@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="体会加总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="protocol detail">
+<meta property="og:url" content="http://example.com/articles/795adae3.html">
+<meta property="og:site_name" content="deer-li&#39;s blog">
+<meta property="og:description" content="体会加总结">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/articles/795adae3/1616296215055.png">
+<meta property="og:image" content="http://example.com/articles/795adae3/1616331999066.png">
+<meta property="article:published_time" content="2021-03-21T06:00:00.000Z">
+<meta property="article:modified_time" content="2021-03-21T13:30:53.549Z">
+<meta property="article:author" content="deer-li">
+<meta property="article:tag" content="TCP">
+<meta property="article:tag" content="IP">
+<meta property="article:tag" content="网络基础">
+<meta property="article:tag" content="第一章">
+<meta property="article:tag" content="分组交换">
+<meta property="article:tag" content="分层">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/articles/795adae3/1616296215055.png">
+
+<link rel="canonical" href="http://example.com/articles/795adae3.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>protocol detail | deer-li's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">deer-li's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">每天都要元气满满</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/articles/795adae3.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="deer-li">
+      <meta itemprop="description" content="技术博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="deer-li's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          protocol detail
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-03-21 14:00:00 / 修改时间：21:30:53" itemprop="dateCreated datePublished" datetime="2021-03-21T14:00:00+08:00">2021-03-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">计算机网络</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">体会加总结</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="第一章-概述"><a href="#第一章-概述" class="headerlink" title="第一章 概述"></a>第一章 概述</h1><h2 id="分组交换"><a href="#分组交换" class="headerlink" title="分组交换"></a>分组交换</h2><ul>
+<li><p>目前看，学习计算机网络，永绕不过协议，官方给的协议定义：<em>国家事务或外交场合的正式程序或规则系统</em></p>
+</li>
+<li><p>然后体系结构是协议和物理的结合，带有艺术和科学的结晶，实际上是一组设计决策，涉及支持的特点和在哪里实现这些特点。</p>
+</li>
+<li><p>了解网络的概念</p>
+<p>​    网络的概念主要是基于电话网络，最开始是针对一次通话中连接双方通话而设计的。</p>
+<ul>
+<li><p>分组交换的思想：首先这里分组是个名词，一个分组就是一个包含一定字节数的数字信息块。然后这一个一个分组来自不同的发送方，之后发送给不同的接收方，而且是可以再分解的。具体就是分组通过交换设备传输，并且路径可以改变。</p>
+<img src="/articles/795adae3/1616296215055.png" class>
+
+<p>注意：分组交换机收到分组后，分组存储在缓冲队列中，并且通过先到达先服务的形式进行处理。这种先进先出缓冲管理和按需调度结合起来容易实现统计复用。</p>
+<p>统计复用就像是一条高速公路，车辆可以变换车道，但是最终会分散在各处，任何点的收缩都可能造成道路繁忙</p>
+</li>
+</ul>
+</li>
+<li><p>虚电路抽象的网络和面向连接的网络</p>
+<p>​    首先虚电路抽象网络是一种面向连接的分组交换网络，是与数据报网络相比较的，数据报网络是一种面向无连接的分组交换网络，我们不去讨论具体的分组交换网络，我们直说面向连接和面向无连接，我们平时所说的tcp，那就是面向连接的网络协议，而ip是面向无连接的。udp也是面向无连接的。</p>
+<img src="/articles/795adae3/1616331999066.png" class>
+
+<ul>
+<li><p>面向连接：</p>
+<p>   面向连接协议是TCP/IP协议族的重要组成部分，面向连接依赖发送方和接收方之间的显示通信和阻塞以管理双方的数据传输，网络系统需要在两台主机之间发送数据之前先建立连接。而面向连接服务就是通信双方在通信时，要事先建立好一条通信线路（虚拟的），其过程有建立连接、维护连接、释放（断开）连接三个过程。面向连接方法中，在两个端点之间建立了一条数据通信信道(电路)。这条信道提供了一条在网络上顺序发送报文分组的预定义路径，这个连接类似于语音电话。发送方与接收方保持联系以协调会话和报文分组接收或失败的信号。但这并不意味着面向连接的信道比无连接的信道使用了更多的带宽，两种方法都只在报文分组传输时才使用带宽。</p>
+</li>
+<li><p>面向无连接：与面向连接相对，面向无连接是指通信双方不需要事先建立通信线路，而是把每个带有目的地址的报文分组送到线路上，由系统自主选定线路进行传输。面向连接基于电话系统模型，而面向无连接则基于邮政系统模型。相对于面向连接的建立连接的三个过程，面向无连接只有“传送数据”的过程。 在无连接方法中，网络除了把分组传送到目的地以外不需做任何事情，如果分组丢失了，接收方必须检测出错误并请求重发;如果分组因采用不同的路径而没有按序到达，接收方必须将它们重新排序。</p>
+<ul>
+<li>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_37653144/article/details/80297757">https://blog.csdn.net/qq_37653144/article/details/80297757</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>消息边界：简单来说，在面向连接的协议中，传输协议把数据分块，每块数据是有物理边界的，那么发送端发送每块数据的时候，通常把数据块看作一条独立的消息在网上传输，而接收端通常只能接收独立的消息，发送端发送多少块，接收端就要接受多少次，这就叫做存在消息保护边界；而流传输的时候，并不把消息当成一块一块的数据，而是在发送或者接受时，一次可能接受多个数据块；tcp是不保留消息边界的协议。</p>
+</li>
+<li><p>端到端论点和命运共享</p>
+<p>​    这两个话题均要求应用层中的应用程序非常智能，因为我们在说端到端的数据传输过程中，很多功能要在端主机的应用程序中实现，而且命运共享也建议将所有必要的状态放在通信端点，由此提出当前Internet的矛盾是：哪些功能是必要的，要在主机中实现，哪些功能是不必要的，可以在网络中实现。</p>
+<ul>
+<li>涉及到进制转换问题</li>
+</ul>
+</li>
+</ul>
+<h2 id="分层"><a href="#分层" class="headerlink" title="分层"></a>分层</h2>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/TCP/" rel="tag"># TCP</a>
+              <a href="/tags/IP/" rel="tag"># IP</a>
+              <a href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" rel="tag"># 网络基础</a>
+              <a href="/tags/%E7%AC%AC%E4%B8%80%E7%AB%A0/" rel="tag"># 第一章</a>
+              <a href="/tags/%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2/" rel="tag"># 分组交换</a>
+              <a href="/tags/%E5%88%86%E5%B1%82/" rel="tag"># 分层</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/articles/124cdf9.html" rel="prev" title="sql语句">
+      <i class="fa fa-chevron-left"></i> sql语句
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/articles/94495a71.html" rel="next" title="TCPIP协议详解（二）">
+      TCPIP协议详解（二） <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">第一章 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2"><span class="nav-number">1.1.</span> <span class="nav-text">分组交换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%B1%82"><span class="nav-number">1.2.</span> <span class="nav-text">分层</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">deer-li</p>
+  <div class="site-description" itemprop="description">技术博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">deer-li</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

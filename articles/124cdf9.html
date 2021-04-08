@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="我已开始练习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sql语句">
+<meta property="og:url" content="http://example.com/articles/124cdf9.html">
+<meta property="og:site_name" content="deer-li&#39;s blog">
+<meta property="og:description" content="我已开始练习">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-20T12:06:34.499Z">
+<meta property="article:modified_time" content="2021-03-26T12:16:18.308Z">
+<meta property="article:author" content="deer-li">
+<meta property="article:tag" content="sql">
+<meta property="article:tag" content="where">
+<meta property="article:tag" content="insert">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/articles/124cdf9.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>sql语句 | deer-li's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">deer-li's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">每天都要元气满满</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/articles/124cdf9.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="deer-li">
+      <meta itemprop="description" content="技术博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="deer-li's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          sql语句
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-03-20 20:06:34" itemprop="dateCreated datePublished" datetime="2021-03-20T20:06:34+08:00">2021-03-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-26 20:16:18" itemprop="dateModified" datetime="2021-03-26T20:16:18+08:00">2021-03-26</time>
+              </span>
+
+          
+            <div class="post-description">我已开始练习</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>SQL语句学习：</p>
+<ul>
+<li>建库：</li>
+</ul>
+<p>①创建数据库：create database db_name;</p>
+<p>②删除数据库：drop database db_name;</p>
+<p>③显示创建数据库的语句：show create database db_name;</p>
+<p>④显示数据库语句：show databases;</p>
+<p>⑤在创建数据库或者数据表的时候，是可以指定字符集的；</p>
+<p>只需要在后面加上character set &lt;字符集&gt;；</p>
+<p>⑥切换数据库 use db_name;</p>
+<p>⑦查看当前使用的数据库 select database()；</p>
+<ul>
+<li>建表</li>
+</ul>
+<p>mysql中的建表语句：</p>
+<p>create table table_name（</p>
+<p>属性字段 属性对应的类型以及大小</p>
+<p>id varchar(8),</p>
+<p>……</p>
+<p>主键声明</p>
+<p>）字符集等说明；</p>
+<ul>
+<li>修改表结构</li>
+</ul>
+<p>①修改表名称：alter table 表名 rename 新表名;</p>
+<p>②添加字段： alter table 表名 add 字段名称 字段定义;</p>
+<p>③删除字段 ：alter table 表名 drop 字段名称；</p>
+<p>④修改字段定义：alter table 表名 modify 字段名称 字段定义；</p>
+<p>⑤修改字段名称以及字段定义：alter table 表名 change 旧字段名称 新字段名称 字段定义</p>
+<p>注：字段定义包含字段类型，字段约束等</p>
+<ul>
+<li><p>查看表结构 ：desc table_name;</p>
+</li>
+<li><p>增加数据：insert into 表名（字段1，字段2，……）values (value1,value2,……)；</p>
+<p>注：对于char和varchar 我们要对插入的值加双引号。</p>
+</li>
+<li><p>查询数据：</p>
+<ul>
+<li><p>查询所有数据：select * from 表名称；</p>
+<p>注意：如果select * from 表1，表2；那么查询出来会出现两张表的全连接情况，做笛卡尔积运算；</p>
+</li>
+<li><p>限制查询几条数据用limit来限制 ：</p>
+<ul>
+<li>select * from table_name limit 3,4; 这句话表示查询输出表中的4,5,6,7,行的数据，即从第三行（不包括）开始，输出4行数据；</li>
+<li>select * from table_name limit 5 offset 4;这句话表示查询输出表中5,6,7,8,9，行的数据，即从第四行（不包括)开始，输出5行数据；</li>
+</ul>
+</li>
+<li><p>只查看某几个字段：select 字段1，字段2，……from 表名；</p>
+</li>
+<li><p>还可以和distinct组合，去重查询，假如姓名列中有人名重复，那么我们只想统计人数，我们可以这样</p>
+<p>select distinct name from user；</p>
+</li>
+<li><p>where子句（用于过滤筛选），当使用where子句按条件查找的时候，我们通常要结合一些运算符：</p>
+<ul>
+<li><p>比较运算符</p>
+<p>大于，小于，等于，不等于；</p>
+<p>between……and……，用以显示在某一区间的值,包括两端的值；</p>
+<p>in ,用以显示in列表中的值，例如in(100,200);</p>
+<p>like 模糊查询，一般匹配_或者%；</p>
+<p>is null：判断是否为空；</p>
+</li>
+<li><p>逻辑运算符</p>
+<p>and 组合条件需要同时满足；</p>
+<p>or  多个条件任一成立</p>
+<p>not 非，例如where not（age&gt;10）;      </p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>更新数据：</p>
+<ul>
+<li><p>更改某行的某列</p>
+<p>update 表名称 set 列名称=新值 where 某行的定义；这里某行的定义是为了约束到某一行，因为你不约束的话 ，这条update语句就会影响这列的所有行，当然这种情况一般是比较少的，所以一般我们都会加where子句来约束一下：比如有一张用户表，我要更改第四行的姓名：</p>
+<p>那么就用 update user set name=“帅哥” where id=4;</p>
+</li>
+<li><p>更改某行的某几列</p>
+<p>update 表名称 set 列名称1=新值 ，列名称2=新值 where 某行的定义；</p>
+</li>
+</ul>
+</li>
+<li><p>删除数据（delete）</p>
+<ul>
+<li>delete from table_name where 要删除的属性值，比如我要删除第四行的姓名</li>
+</ul>
+<p>那么我就用delete from user where name=“帅哥”；</p>
+<p>可以对字段起别名，用as来起别名 as关键字也可以省略</p>
+<h1 id="sql内置函数"><a href="#sql内置函数" class="headerlink" title="sql内置函数"></a>sql内置函数</h1><p>sql里的这些函数一般和select和where等关键字组合使用</p>
+<h4 id="聚合函数（aggregate-function），这些聚合函数是可以写在一起的，比如select-sum（列名），avg（列名）-from-tb-name"><a href="#聚合函数（aggregate-function），这些聚合函数是可以写在一起的，比如select-sum（列名），avg（列名）-from-tb-name" class="headerlink" title="聚合函数（aggregate function），这些聚合函数是可以写在一起的，比如select sum（列名），avg（列名） from tb_name;"></a>聚合函数（aggregate function），这些聚合函数是可以写在一起的，比如select sum（列名），avg（列名） from tb_name;</h4><p>①count（），一般返回匹配指定条件的行数。</p>
+<p>​    一般count（*）和count（1）执行效果一样，但是执行效率不同，而且执行逻辑不一样，虽然他俩都是用来统计表中所有字段的数目，但是count（1）可以统计到null值,另外一个不行，而且统计大量数据的时候，前者慢一点，也就是count（1）快一点</p>
+<ul>
+<li><code>COUNT(*)</code></li>
+<li><code>COUNT(1)</code></li>
+<li><code>COUNT(column name)</code>会忽略列值为null的情况</li>
+<li><code>COUNT(DISTINCT column name)</code></li>
+</ul>
+<p>执行效率上，统计主键所在列肯定比较快，但是如果只有一个字段，count（*)最快，因为count（星号）统计的时候，要检索所有列，如果只有只一个字段，那就只有一列，这样省去检索列名的时间，所以直接统计行数，效率很高；</p>
+<p>②sum（），一般返回某列的和</p>
+<p>③max(),min():一般返回某列的最大或者最小值；</p>
+<p>④concat():一般可以拼接多个表达式，并返回最后结果，例如select concat(avg(id),sum(id)) from deerli;</p>
+<p>​    甚至我们在进行更改数据表时也可以用这个函数，比如我们想批量给某列后面加上字符串”shuai”,</p>
+<p>​    这时候sql语句怎么写呢，就是update table_name set 列名=concat(列名，”shuai“);这是一个示例，sql语句里面很多都可组合使用的。</p>
+<p>⑤concat_Ws()：一般可以在拼接过程中加上连接符，字符串连接符函数，注意W是大写的；而且一般是把连接符写到第一个参数的位置，后面写连接符要连接的字段；</p>
+<h4 id="日期函数（date-function）"><a href="#日期函数（date-function）" class="headerlink" title="日期函数（date function）"></a>日期函数（date function）</h4><p>①current_timestamp();返回数据库日期</p>
+<p>②日期转换函数</p>
+<p>③还有日期相减函数，用于计算日期之间的差</p>
+<p>④还有时间和时间戳相互转换函数</p>
+<h4 id="数值计算函数"><a href="#数值计算函数" class="headerlink" title="数值计算函数"></a>数值计算函数</h4><p>①round（）：取小数点后几位</p>
+<p>②floor（）:向下取整</p>
+<p>③rand（）：取随机数</p>
+<p>小结：sql中有许多函数，以上是比较常见的</p>
+<h4 id="Having语句"><a href="#Having语句" class="headerlink" title="Having语句"></a><em>Having语句</em></h4><p>​    having语句主要是可以继续作过滤，功能比where子句要多一些，可以多层过滤，而且where子句没办法对结果再次查询。</p>
+<h4 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h4><p>其中一种语法是if(判断条件，条件成立的结果，条件不成立的结果)；和其它关键字组合使用；</p>
+<p>另外一种常用的判断是case when 条件成立 then 返回值 else 返回值 end；</p>
+<h4 id="排序语句"><a href="#排序语句" class="headerlink" title="排序语句"></a>排序语句</h4><p>order by语句，用于对表中数据进行降序排列：select * from table_name order by 列1，列2……；</p>
+<p>group by语句，分组，即可以单独计算分组中的数据，比如计算消费表里每人平均花费多少钱；</p>
+<p>​    select name,avg(cost) from table_name group by name;</p>
+<p>​    这个语句就是按照名字来分组计算，最后就可以得到每人平均所花费的钱数；</p>
+<p>​    这个分组函数完成的就是相同数据进入同一组。</p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/sql/" rel="tag"># sql</a>
+              <a href="/tags/where/" rel="tag"># where</a>
+              <a href="/tags/insert/" rel="tag"># insert</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/articles/ab2e7cd5.html" rel="prev" title="centOS7安装mysql">
+      <i class="fa fa-chevron-left"></i> centOS7安装mysql
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/articles/795adae3.html" rel="next" title="protocol detail">
+      protocol detail <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#sql%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">sql内置函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0%EF%BC%88aggregate-function%EF%BC%89%EF%BC%8C%E8%BF%99%E4%BA%9B%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0%E6%98%AF%E5%8F%AF%E4%BB%A5%E5%86%99%E5%9C%A8%E4%B8%80%E8%B5%B7%E7%9A%84%EF%BC%8C%E6%AF%94%E5%A6%82select-sum%EF%BC%88%E5%88%97%E5%90%8D%EF%BC%89%EF%BC%8Cavg%EF%BC%88%E5%88%97%E5%90%8D%EF%BC%89-from-tb-name"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">聚合函数（aggregate function），这些聚合函数是可以写在一起的，比如select sum（列名），avg（列名） from tb_name;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%A5%E6%9C%9F%E5%87%BD%E6%95%B0%EF%BC%88date-function%EF%BC%89"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">日期函数（date function）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97%E5%87%BD%E6%95%B0"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">数值计算函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Having%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">Having语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">判断语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">排序语句</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">deer-li</p>
+  <div class="site-description" itemprop="description">技术博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">deer-li</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
