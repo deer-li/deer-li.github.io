@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hadoop 学习</title>
+    <url>/articles/90df21b7.html</url>
+    <content><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>​    本文不是概念文章，而是记录我在hadoop学习中，所遇到的问题以及对于问题的解决！</p>
+<p>​    hadoop平台是一个适合海量数据的分布式存储和分布式计算的平台</p>
+<p>​    </p>
+<h2 id="hadoop目录"><a href="#hadoop目录" class="headerlink" title="hadoop目录"></a>hadoop目录</h2><p>​    我们首先在linux中搭建hadoop集群，搭建hadoop集群是为了提供一个分布式的平台，然后去处理单机无法处理的大数据量的任务，实现的复杂度呈级数增加，大大降低开发难点和减少工作量。hadoop的三大组件分别是HDFS，MapReduce还有Yarn：</p>
+]]></content>
+      <tags>
+        <tag>bigdata</tag>
+        <tag>hdfs</tag>
+        <tag>核心平台级产品</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Ajax学习</title>
     <url>/articles/737d6811.html</url>
     <content><![CDATA[<h1 id="Ajax学习"><a href="#Ajax学习" class="headerlink" title="Ajax学习"></a>Ajax学习</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>​    Ajax是一种能够是网页局部数据刷新的技术，在后台和服务器进行少量的数据交换，不用刷新整个网页，就能更改局部数据，用于快速创建动态网页。案例：google地图，新浪微博等等</p>
@@ -63,20 +77,6 @@
         <tag>Ajax</tag>
         <tag>局部刷新</tag>
         <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hadoop 学习</title>
-    <url>/articles/90df21b7.html</url>
-    <content><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>​    本文不是概念文章，而是记录我在hadoop学习中，所遇到的问题以及对于问题的解决！</p>
-<p>​    hadoop平台是一个适合海量数据的分布式存储和分布式计算的平台</p>
-<p>​    </p>
-<h2 id="hadoop目录"><a href="#hadoop目录" class="headerlink" title="hadoop目录"></a>hadoop目录</h2><p>​    我们首先在linux中搭建hadoop集群，搭建hadoop集群是为了提供一个分布式的平台，然后去处理单机无法处理的大数据量的任务，实现的复杂度呈级数增加，大大降低开发难点和减少工作量。hadoop的三大组件分别是HDFS，MapReduce还有Yarn：</p>
-]]></content>
-      <tags>
-        <tag>bigdata</tag>
-        <tag>hdfs</tag>
-        <tag>核心平台级产品</tag>
       </tags>
   </entry>
   <entry>
@@ -219,6 +219,10 @@
 <p>DeserilizableDemo.java</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.deer.seriallize;</span><br><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.ObjectInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.Serializable;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DeserilizableDemo</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        Employeee e = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span></span><br><span class="line">        &#123;</span><br><span class="line">            FileInputStream fileIn = <span class="keyword">new</span> FileInputStream(<span class="string">&quot;d:/employeee.ser&quot;</span>);</span><br><span class="line">            ObjectInputStream in = <span class="keyword">new</span> ObjectInputStream(fileIn);</span><br><span class="line">            e = (Employeee) in.readObject();</span><br><span class="line">            in.close();</span><br><span class="line">            fileIn.close();</span><br><span class="line">        &#125;<span class="keyword">catch</span>(IOException i)</span><br><span class="line">        &#123;</span><br><span class="line">            i.printStackTrace();</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;<span class="keyword">catch</span>(ClassNotFoundException c)</span><br><span class="line">        &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Employee class not found&quot;</span>);</span><br><span class="line">            c.printStackTrace();</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;Deserialized Employee...&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;Name: &quot;</span> + e.name);</span><br><span class="line">        System.out.println(<span class="string">&quot;Address: &quot;</span> + e.address);</span><br><span class="line">        System.out.println(<span class="string">&quot;SSN: &quot;</span> + e.SSN);</span><br><span class="line">        System.out.println(<span class="string">&quot;Number: &quot;</span> + e.number);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>总结，关于序列化的问题，要注意序列化的条件，序列化的步骤，序列化的目的，序列化的作用</p>
+<p>对于序列化的步骤：</p>
+<p>①待续列化类要实现序列化接口</p>
+<p>②序列化的过程先创建文件输出流，因为要把对象写入磁盘，从内存到磁盘肯定是要输出流对象的，然后创建对象输出流对象，然后调用writeObject（）方法，最后逐一关闭流。</p>
+<p>③反序列化的过程就先创建文件输入流对象，因为要把序列化文件读到内存中，转化成对象从磁盘到内存肯定是要输入流对象的，然后创建输入流对象，然后调用readObject（）方法，最后逐一关闭流。</p>
 ]]></content>
       <tags>
         <tag>serializable</tag>
@@ -278,49 +282,6 @@
 ]]></content>
       <tags>
         <tag>枚举</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>java数据结构续集</title>
-    <url>/articles/b0ab3d44.html</url>
-    <content><![CDATA[<ul>
-<li><p>HashSet：</p>
-<p>HashSet是基于HashMap来实现的，是一个不允许有重复值的集合，允许有null值，是无序的，不是线程安全的，如果多个线程尝试同时修改 HashSet，则最终结果是不确定的。 您必须在多线程访问时显式同步对HashSet 的并发访问。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.deer.data;</span><br><span class="line"><span class="keyword">import</span> java.util.HashSet;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">hashset</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//HashSet 中的元素实际上是对象，一些常见的基本类型可以使用它的包装类。</span></span><br><span class="line">        HashSet&lt;String&gt; sites = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        sites.add(<span class="string">&quot;Google&quot;</span>);</span><br><span class="line">        sites.add(<span class="string">&quot;Runoob&quot;</span>);</span><br><span class="line">        sites.add(<span class="string">&quot;Taobao&quot;</span>);</span><br><span class="line">        sites.add(<span class="string">&quot;Zhihu&quot;</span>);</span><br><span class="line">        sites.add(<span class="string">&quot;Runoob&quot;</span>);     <span class="comment">// 重复的元素不会被添加</span></span><br><span class="line">        <span class="keyword">for</span> (String i : sites) &#123;</span><br><span class="line">            System.out.println(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<img src="/articles/b0ab3d44/1617672088115.png" class>
-
-<ul>
-<li><p>HashMap类</p>
-<p>HashMap是一个散列表，存储的内容是键值对映射，实现了Map接口，根据键的hashcode值存储数据，最多允许一条记录的键为null，不支持线程同步，而且hashmap是无序的</p>
-<ul>
-<li><img src="/articles/b0ab3d44/1617672282744.png" class>
-
-</li>
-</ul>
-<p>和hashset一样，元素基本是对象，我们使用hashmap一般使用它的包装类 </p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.deer.data;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">hashmap</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        HashMap&lt;String,String&gt; hs=<span class="keyword">new</span> HashMap();</span><br><span class="line">        <span class="comment">//添加元素</span></span><br><span class="line">        hs.put(<span class="string">&quot;1&quot;</span>,<span class="string">&quot;小明&quot;</span>);</span><br><span class="line">        hs.put(<span class="string">&quot;2&quot;</span>,<span class="string">&quot;小李&quot;</span>);</span><br><span class="line">        hs.put(<span class="string">&quot;3&quot;</span>,<span class="string">&quot;小白&quot;</span>);</span><br><span class="line">        hs.put(<span class="string">&quot;4&quot;</span>,<span class="string">&quot;小红&quot;</span>);</span><br><span class="line">        <span class="comment">//使用get（key）来获取对应的value</span></span><br><span class="line">        System.out.println(hs.get(<span class="string">&quot;1&quot;</span>));</span><br><span class="line">        System.out.println(hs);</span><br><span class="line">        <span class="comment">// 返回所有 value 值</span></span><br><span class="line">        <span class="keyword">for</span>(String value: hs.values()) &#123;</span><br><span class="line">            <span class="comment">// 输出每一个value</span></span><br><span class="line">            System.out.print(value + <span class="string">&quot;, &quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>java迭代器（iterator）</p>
-<p>​    Java Iterator（迭代器）不是一个集合，它是一种用于访问集合的方法，可用于迭代 <a href="https://www.runoob.com/java/java-arraylist.html">ArrayList</a> 和 <a href="https://www.runoob.com/java/java-hashset.html">HashSet</a> 等集合。</p>
-<ul>
-<li><p>迭代器 it 的两个基本操作是 next 、hasNext 和 remove。</p>
-</li>
-<li><p>调用 it.next() 会返回迭代器的下一个元素，并且更新迭代器的状态。</p>
-</li>
-<li><p>调用 it.hasNext() 用于检测集合中是否还有元素。</p>
-</li>
-<li><p>调用 it.remove() 将迭代器返回的元素删除。</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.deer.data;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Iterators</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ArrayList&lt;String&gt; as=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        as.add(<span class="string">&quot;1&quot;</span>);</span><br><span class="line">        as.add(<span class="string">&quot;2&quot;</span>);</span><br><span class="line">        as.add(<span class="string">&quot;3&quot;</span>);</span><br><span class="line">        Iterator&lt;String&gt; it=as.iterator();</span><br><span class="line">        System.out.println(it.next());</span><br><span class="line">        System.out.println(it.hasNext());</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>hash</tag>
-        <tag>map</tag>
-        <tag>迭代器</tag>
       </tags>
   </entry>
   <entry>
@@ -581,6 +542,49 @@
         <tag>sql</tag>
         <tag>where</tag>
         <tag>insert</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java数据结构续集</title>
+    <url>/articles/b0ab3d44.html</url>
+    <content><![CDATA[<ul>
+<li><p>HashSet：</p>
+<p>HashSet是基于HashMap来实现的，是一个不允许有重复值的集合，允许有null值，是无序的，不是线程安全的，如果多个线程尝试同时修改 HashSet，则最终结果是不确定的。 您必须在多线程访问时显式同步对HashSet 的并发访问。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.deer.data;</span><br><span class="line"><span class="keyword">import</span> java.util.HashSet;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">hashset</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//HashSet 中的元素实际上是对象，一些常见的基本类型可以使用它的包装类。</span></span><br><span class="line">        HashSet&lt;String&gt; sites = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        sites.add(<span class="string">&quot;Google&quot;</span>);</span><br><span class="line">        sites.add(<span class="string">&quot;Runoob&quot;</span>);</span><br><span class="line">        sites.add(<span class="string">&quot;Taobao&quot;</span>);</span><br><span class="line">        sites.add(<span class="string">&quot;Zhihu&quot;</span>);</span><br><span class="line">        sites.add(<span class="string">&quot;Runoob&quot;</span>);     <span class="comment">// 重复的元素不会被添加</span></span><br><span class="line">        <span class="keyword">for</span> (String i : sites) &#123;</span><br><span class="line">            System.out.println(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<img src="/articles/b0ab3d44/1617672088115.png" class>
+
+<ul>
+<li><p>HashMap类</p>
+<p>HashMap是一个散列表，存储的内容是键值对映射，实现了Map接口，根据键的hashcode值存储数据，最多允许一条记录的键为null，不支持线程同步，而且hashmap是无序的</p>
+<ul>
+<li><img src="/articles/b0ab3d44/1617672282744.png" class>
+
+</li>
+</ul>
+<p>和hashset一样，元素基本是对象，我们使用hashmap一般使用它的包装类 </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.deer.data;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">hashmap</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        HashMap&lt;String,String&gt; hs=<span class="keyword">new</span> HashMap();</span><br><span class="line">        <span class="comment">//添加元素</span></span><br><span class="line">        hs.put(<span class="string">&quot;1&quot;</span>,<span class="string">&quot;小明&quot;</span>);</span><br><span class="line">        hs.put(<span class="string">&quot;2&quot;</span>,<span class="string">&quot;小李&quot;</span>);</span><br><span class="line">        hs.put(<span class="string">&quot;3&quot;</span>,<span class="string">&quot;小白&quot;</span>);</span><br><span class="line">        hs.put(<span class="string">&quot;4&quot;</span>,<span class="string">&quot;小红&quot;</span>);</span><br><span class="line">        <span class="comment">//使用get（key）来获取对应的value</span></span><br><span class="line">        System.out.println(hs.get(<span class="string">&quot;1&quot;</span>));</span><br><span class="line">        System.out.println(hs);</span><br><span class="line">        <span class="comment">// 返回所有 value 值</span></span><br><span class="line">        <span class="keyword">for</span>(String value: hs.values()) &#123;</span><br><span class="line">            <span class="comment">// 输出每一个value</span></span><br><span class="line">            System.out.print(value + <span class="string">&quot;, &quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>java迭代器（iterator）</p>
+<p>​    Java Iterator（迭代器）不是一个集合，它是一种用于访问集合的方法，可用于迭代 <a href="https://www.runoob.com/java/java-arraylist.html">ArrayList</a> 和 <a href="https://www.runoob.com/java/java-hashset.html">HashSet</a> 等集合。</p>
+<ul>
+<li><p>迭代器 it 的两个基本操作是 next 、hasNext 和 remove。</p>
+</li>
+<li><p>调用 it.next() 会返回迭代器的下一个元素，并且更新迭代器的状态。</p>
+</li>
+<li><p>调用 it.hasNext() 用于检测集合中是否还有元素。</p>
+</li>
+<li><p>调用 it.remove() 将迭代器返回的元素删除。</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.deer.data;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Iterators</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ArrayList&lt;String&gt; as=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        as.add(<span class="string">&quot;1&quot;</span>);</span><br><span class="line">        as.add(<span class="string">&quot;2&quot;</span>);</span><br><span class="line">        as.add(<span class="string">&quot;3&quot;</span>);</span><br><span class="line">        Iterator&lt;String&gt; it=as.iterator();</span><br><span class="line">        System.out.println(it.next());</span><br><span class="line">        System.out.println(it.hasNext());</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>hash</tag>
+        <tag>map</tag>
+        <tag>迭代器</tag>
       </tags>
   </entry>
   <entry>
