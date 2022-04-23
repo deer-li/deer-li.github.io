@@ -212,7 +212,7 @@
 <li>特别是在web应用中，使用懒加载的方式可以让web相关的beans直到发生http请求被接收的时候才被初始化</li>
 </ul>
 <h4 id="1-2-Customizing-the-Banner"><a href="#1-2-Customizing-the-Banner" class="headerlink" title="1.2 Customizing the Banner"></a>1.2 <code>Customizing the Banner</code></h4><p>​	所谓自定义横幅，指的是<code>springboot</code>项目启动的时候，控制台日志打印出的那个<code>banner</code>图，这个图是可以自定义的，当<code>springboot</code>项目启动之后，默认是下图这样：</p>
-<p>![1649733285128](spring boot学习\1649733285128.png)</p>
+<p>![1649733285128](spring boot学习\1649733285128.png)<img src="/2022/04/23/spring%20boot%E5%AD%A6%E4%B9%A0/04/23/spring%20boot%E5%AD%A6%E4%B9%A0/1649733285128.png" class width="1649733285128"></p>
 <p>​	按照官网上的说法，这个被打印出的<code>banner</code>可以被改变，通过将<code>banner.txt</code>文件添加到类路径或将<code>spring.banner.location</code>属性设置为此类文件的位置，可以更改启动时打印的横幅。如果文件的编码不是<code>UTF-8</code>，则可以设置<code>spring.banner.charset</code>。除了文本文件，您还可以将<code>banner.gif</code>，<code>banner.jpg</code>或<code>banner.png</code>图像文件添加到类路径或设置<code>spring.banner.image.location</code>属性。图像将转换为ASCII艺术表示，并打印在任何文本横幅上方。</p>
 <p>​	同时呢，在<code>banner.txt</code>中，你可以使用以下任意占位符</p>
 <p>![1649739162459](spring boot学习\1649739162459.png)</p>
