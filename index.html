@@ -364,7 +364,32 @@
 <li>在<code>html</code>标签中增加命名空间     ：   <code>xmlns:th=&quot;http://www.thymeleaf.org&quot;</code></li>
 <li><code>thymeleaf</code>语法（了解）</li>
 </ul>
-<h3 id="1-11-Spring-MVC-Auto-Configuration"><a href="#1-11-Spring-MVC-Auto-Configuration" class="headerlink" title="1.11 Spring MVC Auto-Configuration"></a>1.11 <code>Spring MVC Auto-Configuration</code></h3><h2 id="二、SpringBoot-实战演练（员工管理系统）"><a href="#二、SpringBoot-实战演练（员工管理系统）" class="headerlink" title="二、SpringBoot 实战演练（员工管理系统）"></a>二、<code>SpringBoot</code> 实战演练（员工管理系统）</h2>
+<h3 id="1-11-Spring-MVC-Auto-Configuration"><a href="#1-11-Spring-MVC-Auto-Configuration" class="headerlink" title="1.11 Spring MVC Auto-Configuration"></a>1.11 <code>Spring MVC Auto-Configuration</code></h3><h4 id="1-11-1SpringBoot能很好的t为大部分应用程序提供自动配置SpringMVC-它的自动配置在Spring的基础上添加以下特色功能："><a href="#1-11-1SpringBoot能很好的t为大部分应用程序提供自动配置SpringMVC-它的自动配置在Spring的基础上添加以下特色功能：" class="headerlink" title="1.11.1	SpringBoot能很好的t为大部分应用程序提供自动配置SpringMVC,它的自动配置在Spring的基础上添加以下特色功能："></a>1.11.1	<code>SpringBoot</code>能很好的t为大部分应用程序提供自动配置<code>SpringMVC</code>,它的自动配置在<code>Spring</code>的基础上添加以下特色功能：</h4><ul>
+<li><p>包含<code>ContentNegotiatingViewResolver</code>和<code>BeanNameViewResolver</code>    bean。</p>
+</li>
+<li><p>支持提供静态资源，包含对<code>WebJars</code>的支持</p>
+</li>
+<li><p>自动注册<code>Converter</code>、<code>GenericConverter</code> 、和<code>Formatter</code></p>
+</li>
+<li><p>支持<code>HttpMessageConverters</code></p>
+</li>
+<li><p>自动注册<code>MessageCodesResolver</code></p>
+</li>
+<li><p>静态首页</p>
+</li>
+<li><p>自动使用<code>ConfigurableWebBindingInitializer </code></p>
+<h4 id="1-11-2-如何扩展springMVC？"><a href="#1-11-2-如何扩展springMVC？" class="headerlink" title="1.11.2 如何扩展springMVC？"></a>1.11.2 如何扩展<code>springMVC</code>？</h4><p>①在自定义的类实现<code>WebMvcConfigurer</code> 上加上<code>@Configuration</code>注解，**但是不要添加<code>@EnableWebMvc**</code></p>
+<h4 id="1-11-3-全面接管SpringMVC"><a href="#1-11-3-全面接管SpringMVC" class="headerlink" title="1.11.3 全面接管SpringMVC"></a>1.11.3 全面接管<code>SpringMVC</code></h4><p>②在自定义的类中添加<code>@Configuration</code>,同时要加上<code>@EnableWebMvc</code>注解</p>
+<h4 id="1-11-4-自建视图解析器"><a href="#1-11-4-自建视图解析器" class="headerlink" title="1.11.4 自建视图解析器"></a>1.11.4 自建视图解析器</h4><p>​	可以通过实现视图解析器接口，然后重写里面的方法，来自定义视图解析器</p>
+<p>​	<img src="/2022/04/23/springboot/1650853469675.png" alt="1650853469675"></p>
+<p>然后springMVC自己的视图解析器是<code>ContentNegotiatingViewResolver</code>其重写了<code>resolveViewName()</code></p>
+<p><img src="/2022/04/23/springboot/1650853842100.png" alt="1650853842100"></p>
+<p>自定义视图解析器可以被前端控制器拿到：</p>
+<p><img src="/2022/04/23/springboot/1650854291843.png" alt="1650854291843"></p>
+<p><strong>ps:如果想要自定义一些功能，只要使用<code>@Configuration</code>,然后把它交给<code>springboot</code>,springboot就会自动装配，原理如上图示例图</strong>。</p>
+<h3 id="二、SpringBoot-实战演练（员工管理系统）"><a href="#二、SpringBoot-实战演练（员工管理系统）" class="headerlink" title="二、SpringBoot 实战演练（员工管理系统）"></a>二、<code>SpringBoot</code> 实战演练（员工管理系统）</h3></li>
+</ul>
+
     
 
     
