@@ -26,8 +26,12 @@
 <meta property="og:image" content="https://deer-li.github.io/2022/04/23/springboot/1650853469675.png">
 <meta property="og:image" content="https://deer-li.github.io/2022/04/23/springboot/1650853842100.png">
 <meta property="og:image" content="https://deer-li.github.io/2022/04/23/springboot/1650854291843.png">
+<meta property="og:image" content="https://deer-li.github.io/2022/04/23/springboot/1650955658297.png">
+<meta property="og:image" content="https://deer-li.github.io/2022/04/23/springboot/1650957278250.png">
+<meta property="og:image" content="https://deer-li.github.io/2022/04/23/springboot/1650958203863.png">
+<meta property="og:image" content="https://deer-li.github.io/2022/04/23/springboot/1650958247810.png">
 <meta property="article:published_time" content="2022-04-22T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-25T03:03:24.875Z">
+<meta property="article:modified_time" content="2022-04-27T01:21:04.233Z">
 <meta property="article:author" content="deer-li">
 <meta property="article:tag" content="自动装配">
 <meta property="article:tag" content="springboot">
@@ -220,7 +224,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.8k字</span>
+      <span class="post-count">1.9k字</span>
     </span>
   </span>
 
@@ -229,7 +233,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">7分</span>
+      <span class="post-count">8分</span>
     </span>
   </span>
 </div>
@@ -326,13 +330,22 @@
 <h4 id="1-11-3-全面接管SpringMVC"><a href="#1-11-3-全面接管SpringMVC" class="headerlink" title="1.11.3 全面接管SpringMVC"></a>1.11.3 全面接管<code>SpringMVC</code></h4><p>②在自定义的类中添加<code>@Configuration</code>,同时要加上<code>@EnableWebMvc</code>注解</p>
 <h4 id="1-11-4-自建视图解析器"><a href="#1-11-4-自建视图解析器" class="headerlink" title="1.11.4 自建视图解析器"></a>1.11.4 自建视图解析器</h4><p>​	可以通过实现视图解析器接口，然后重写里面的方法，来自定义视图解析器</p>
 <p>​	<img src="/2022/04/23/springboot/1650853469675.png" alt="1650853469675"></p>
-<p>然后springMVC自己的视图解析器是<code>ContentNegotiatingViewResolver</code>其重写了<code>resolveViewName()</code></p>
+<p>然后<code>springMVC</code>自己的视图解析器是<code>ContentNegotiatingViewResolver</code>，其重写了<code>resolveViewName()</code></p>
 <p><img src="/2022/04/23/springboot/1650853842100.png" alt="1650853842100"></p>
 <p>自定义视图解析器可以被前端控制器拿到：</p>
 <p><img src="/2022/04/23/springboot/1650854291843.png" alt="1650854291843"></p>
 <p><strong>ps:如果想要自定义一些功能，只要使用<code>@Configuration</code>,然后把它交给<code>springboot</code>,springboot就会自动装配，原理如上图示例图</strong>。</p>
 <h3 id="二、SpringBoot-实战演练（员工管理系统）"><a href="#二、SpringBoot-实战演练（员工管理系统）" class="headerlink" title="二、SpringBoot 实战演练（员工管理系统）"></a>二、<code>SpringBoot</code> 实战演练（员工管理系统）</h3></li>
+<li><p>下载框架模板，匹配<code>thymeleaf</code>，引入命名空间</p>
+</li>
 </ul>
+<h4 id="2-2-SpringBoot中页面国际化："><a href="#2-2-SpringBoot中页面国际化：" class="headerlink" title="2.2 SpringBoot中页面国际化："></a>2.2 <code>SpringBoot</code>中页面国际化：</h4><p>① 新建<code>properties</code>文件：<code>Thymeleaf</code>取值用<code>#&#123;expression&#125;</code></p>
+<p><img src="/2022/04/23/springboot/1650955658297.png" alt="1650955658297"></p>
+<p>②语言地区解析源码：</p>
+<p><img src="/2022/04/23/springboot/1650957278250.png" alt="1650957278250"></p>
+<p>自定义国际化组件<code>LocaleResolver</code>实现语言自动切换:</p>
+<p><img src="/2022/04/23/springboot/1650958203863.png" alt="1650958203863"></p>
+<p>把自定义的组件注入到<code>springboot</code>中：<img src="/2022/04/23/springboot/1650958247810.png" alt="1650958247810"></p>
 
     
 
