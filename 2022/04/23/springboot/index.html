@@ -31,8 +31,9 @@
 <meta property="og:image" content="https://deer-li.github.io/2022/04/23/springboot/1650958203863.png">
 <meta property="og:image" content="https://deer-li.github.io/2022/04/23/springboot/1650958247810.png">
 <meta property="og:image" content="https://deer-li.github.io/2022/04/23/springboot/1651040385835.png">
+<meta property="og:image" content="https://deer-li.github.io/2022/04/23/springboot/1651133602470.png">
 <meta property="article:published_time" content="2022-04-22T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-27T11:48:25.623Z">
+<meta property="article:modified_time" content="2022-05-03T12:03:28.700Z">
 <meta property="article:author" content="deer-li">
 <meta property="article:tag" content="自动装配">
 <meta property="article:tag" content="springboot">
@@ -225,7 +226,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2.3k字</span>
+      <span class="post-count">2.5k字</span>
     </span>
   </span>
 
@@ -234,7 +235,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">9分</span>
+      <span class="post-count">10分</span>
     </span>
   </span>
 </div>
@@ -377,9 +378,24 @@
 </ul>
 </li>
 <li><p>列表循环展示</p>
+<p>Web开发中<code>session</code>和<code>cookie</code>的区别：</p>
+<p>​	<strong><code>Cookie</code>是通过客户端记录信息去确定用户身份；<code>Session</code>通过在服务器端记录信息确定用户身份</strong></p>
+<ul>
+<li><code>cookie</code>的内容主要包括：名字、值、过期时间，路径和域<ul>
+<li>名字：</li>
+<li>值：</li>
+<li>过期时间：</li>
+<li>路径：</li>
+<li>域：</li>
+</ul>
 </li>
 </ul>
-
+<p>比如有一家咖啡店，相当于服务器，然后顾客相当于客户端，然后这家咖啡店是会员制，来这里买咖啡的顾客，他们会为顾客办理一张带有身份认证等信息的会员卡，用以识别顾客，那么这张会员卡在顾客手里就相当于<code>cookie</code>，在咖啡店里就相当于<code>session</code>；所以<code>cookie</code>和<code>session</code>都是在服务器端创建的</p>
+<p><img src="/2022/04/23/springboot/1651133602470.png" alt="1651133602470"></p>
+</li>
+</ul>
+<h4 id="2-3-SpringBoot整合JDBC和Druid"><a href="#2-3-SpringBoot整合JDBC和Druid" class="headerlink" title="2.3 SpringBoot整合JDBC和Druid"></a>2.3 <code>SpringBoot</code>整合<code>JDBC</code>和<code>Druid</code></h4><p>​	springboot默认使用的是hikar</p>
+<h4 id="2-4-SpringBoot整合Mybatis"><a href="#2-4-SpringBoot整合Mybatis" class="headerlink" title="2.4 SpringBoot整合Mybatis"></a>2.4 <code>SpringBoot</code>整合Mybatis</h4>
     
 
     
@@ -684,6 +700,14 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">test1</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">test2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">自动装配</a>
               </li>
              
@@ -693,14 +717,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">test1</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">test2</a>
               </li>
             
             <div class="clearfix"></div>

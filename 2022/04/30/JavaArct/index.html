@@ -6,17 +6,29 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://deer-li.github.io">
-  <title>Tag: test1 | Hexo</title>
+  <title>Java 集合框架 | Hexo</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://deer-li.github.io/tags/test1/index.html">
+  <meta name="description" content="一、Java集合框架介绍1.1 首先，Java集合类库将接口和实现分开，比如队列（Queue）1234567&#x2F;&#x2F;队列接口简单形式public interface Queue&lt;E&gt;&amp;#123;    void add(E Element);    E remove();    int size();&amp;#125;  上述接口只是简单定义了队列接口，然后在其中声明了常见的方法，但是没有实现细">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 集合框架">
+<meta property="og:url" content="https://deer-li.github.io/2022/04/30/JavaArct/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、Java集合框架介绍1.1 首先，Java集合类库将接口和实现分开，比如队列（Queue）1234567&#x2F;&#x2F;队列接口简单形式public interface Queue&lt;E&gt;&amp;#123;    void add(E Element);    E remove();    int size();&amp;#125;  上述接口只是简单定义了队列接口，然后在其中声明了常见的方法，但是没有实现细">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://deer-li.github.io/2022/04/30/JavaArct/1652410531012.png">
+<meta property="og:image" content="https://deer-li.github.io/2022/04/30/JavaArct/1652427417395.png">
+<meta property="og:image" content="https://deer-li.github.io/2022/04/30/JavaArct/1652442639829.png">
+<meta property="og:image" content="https://deer-li.github.io/2022/04/30/JavaArct/1651408618822.png">
+<meta property="og:image" content="https://deer-li.github.io/2022/04/30/JavaArct/1651303508921.png">
+<meta property="og:image" content="https://deer-li.github.io/2022/04/30/JavaArct/1651303553866.png">
+<meta property="og:image" content="https://deer-li.github.io/2022/04/30/JavaArct/1651545035503.png">
+<meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-05-13T11:51:03.347Z">
 <meta property="article:author" content="deer-li">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://deer-li.github.io/2022/04/30/JavaArct/1652410531012.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -170,69 +182,305 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-JavaArct" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/04/23/test/" class="archive-article-date">
-        <time datetime="2022-04-23T11:42:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-23</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/04/23/test/" target="_blank">test</a>
   
+    <h1 class="article-title" itemprop="name">
+      Java 集合框架
     </h1>
   
 
 
-        <div class="article-info info-on-right">
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2022/04/30/JavaArct/" class="archive-article-date">
+        <time datetime="2022-04-29T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-30</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.4k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">6分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="一、Java集合框架介绍"><a href="#一、Java集合框架介绍" class="headerlink" title="一、Java集合框架介绍"></a>一、Java集合框架介绍</h3><h4 id="1-1-首先，Java集合类库将接口和实现分开，比如队列（Queue）"><a href="#1-1-首先，Java集合类库将接口和实现分开，比如队列（Queue）" class="headerlink" title="1.1 首先，Java集合类库将接口和实现分开，比如队列（Queue）"></a>1.1 首先，Java集合类库将接口和实现分开，比如队列（Queue）</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//队列接口简单形式</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Queue</span>&lt;E&gt;&#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">add</span><span class="params">(E Element)</span>;</span><br><span class="line">    E <span class="title function_">remove</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">size</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>上述接口只是简单定义了队列接口，然后在其中声明了常见的方法，但是没有实现细节，实际上，实现队列通常有两种方式：①使用循环数组（<strong>对应<code>javaAPI</code>中的<code>ArrayDeque</code>类</strong> ）；②使用链表（<strong>对应<code>JavaAPI</code>中的<code>LinkedList</code>类</strong>）</p>
+<p><img src="/2022/04/30/JavaArct/1652410531012.png" alt="1652410531012"></p>
+<p><strong>一般采用接口来存放集合类型的引用 ,如：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Queue&lt;T&gt; test1=<span class="keyword">new</span> <span class="title class_">CircularArrayQueue</span>&lt;&gt;();</span><br><span class="line">Queue&lt;T&gt; test2 =<span class="keyword">new</span> <span class="title class_">LinkedListQueue</span>&lt;&gt;()</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="1-2-Collection接口是java集合类的基本接口"><a href="#1-2-Collection接口是java集合类的基本接口" class="headerlink" title="1.2 Collection接口是java集合类的基本接口"></a>1.2 Collection接口是java集合类的基本接口</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Collection</span>&lt;E&gt;&#123;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">add</span><span class="params">(E element)</span>;</span><br><span class="line">    Iterator&lt;E&gt; <span class="title function_">iterator</span><span class="params">()</span>;</span><br><span class="line">    ……</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-3-Iterator-迭代器"><a href="#1-3-Iterator-迭代器" class="headerlink" title="1.3 Iterator(迭代器)"></a>1.3 Iterator(迭代器)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Iterator</span>&lt;E&gt;&#123;</span><br><span class="line">    E <span class="title function_">next</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">hasNext</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">remove</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">default</span> <span class="keyword">void</span> <span class="title function_">forEachRemaining</span><span class="params">(Customer&lt;?,<span class="built_in">super</span>&lt;E&gt; action )</span>;</span><br><span class="line">    ……</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>一般遍历集合中的元素，选择迭代器接口是比较常见的方式</strong>，例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Collection&lt;String&gt; c=<span class="string">&quot;&quot;</span>;</span><br><span class="line">Iterator&lt;String&gt; iter=c.iterator();</span><br><span class="line"><span class="keyword">while</span>(iter.hasNext())&#123;</span><br><span class="line">    String e=iter.next();</span><br><span class="line">    <span class="keyword">do</span> something……</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Collection&lt;String&gt; c=<span class="string">&quot;&quot;</span>;</span><br><span class="line"><span class="keyword">for</span>(String element : c)&#123;<span class="comment">//foreach循环可以处理任何实现了Iterator接口的对象</span></span><br><span class="line">    <span class="keyword">do</span> something……</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>或者不写循环，对迭代器对象使用lambda表达式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iterator.forEachRemaining(element-&gt;<span class="keyword">do</span> something with element)</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：调用remove()之前要先调用next()</strong><code>()</code> ：因为<code>java迭代器</code>认为是在两个元素之间，当调用next（）方法的时候，迭代器越过下一个元素，然后返回越过元素的引用。</p>
+<h4 id="1-4-泛型实用方法"><a href="#1-4-泛型实用方法" class="headerlink" title="1.4 泛型实用方法"></a>1.4 泛型实用方法</h4><p>​	此中主要介绍了<code>collection</code>接口和<code>iterable</code>接口都是泛型接口，意味着所有集合类都可以调用这俩接口中的声明方法,也可以编写处理任何集合类型的实用方法，但是在collection接口中，定义了大量的实用方法，如果在每个实现类中都要实现这些方法，那么显得太庞大，所以为了让使用者更容易的使用这些例行方法，<code>java类库</code>提供了一个<code>AbstractCollection</code>接口。这个接口对基础方法，还是以抽象形式定义，但是在某些方面，为实现者提供了其他方法</p>
+<h4 id="1-5-Java集合中的两大基本接口以及体系图"><a href="#1-5-Java集合中的两大基本接口以及体系图" class="headerlink" title="1.5 Java集合中的两大基本接口以及体系图"></a>1.5 Java集合中的两大基本接口以及体系图</h4><p>​		①Collection</p>
+<p>​		②Map</p>
+<p><img src="/2022/04/30/JavaArct/1652427417395.png" alt="1652427417395"></p>
+<p><img src="/2022/04/30/JavaArct/1652442639829.png" alt="1652442639829"></p>
+<p><strong>可以使用<code>ListIterator</code>类从正反两个方向遍历链表，包括添加和删除都可以从正反两个方向</strong></p>
+<ul>
+<li><code>LinkedList</code>（链表）类实现<code>Lis</code>t接口:<code>LinkedList</code>类查询效率低，如果访问第<code>n+1</code>个元素，则必须遍历完前n个元素，头尾插入删除性能高，线程不安全，提供的<code>get(Index)</code>和<code>set()</code>形成<strong>“虚假”的随机访问</strong>，同时做了优化，即如果访问索引值大于总范围的一般，则从链表尾部进行访问（所以实际开发中<strong>常用<code>ArrayList</code>类</strong>）</li>
+<li><img src="/2022/04/30/JavaArct/1651408618822.png" alt="1651408618822"></li>
+<li><img src="/2022/04/30/JavaArct/1651303508921.png" alt="1651303508921"></li>
+<li>绿色实线是表示<code>extend</code>，表示接口之间的继承，比如<code>Collection extend Iterable</code> ，红色实线也代表继承，但是两者都是类，比如<code>LinkedList extend AbstractSequentiaList</code>, 虚线代表<code>implements</code>,比如<code>AbstractList implements List</code>,</li>
+</ul>
+<p><img src="/2022/04/30/JavaArct/1651303553866.png" alt="1651303553866"></p>
+<h4 id="1-6-散列集（HashSet）"><a href="#1-6-散列集（HashSet）" class="headerlink" title="1.6 散列集（HashSet）"></a>1.6 散列集（<code>HashSet</code>）</h4><p>​	无序集合</p>
+<ul>
+<li><code>equals（）</code>应与<code>hashcode（）</code>兼容，即如果<code>x.equals(y)</code>,那么x和y的<code>hashcode</code>也应该相等。</li>
+<li><code>hashset</code>（散列集）是无序的，<code>treeset</code>是有序的。其中遍历<code>Treeset</code>的时候，会自动排序字符串。</li>
+</ul>
+<h4 id="1-7-树集（TreeSet）"><a href="#1-7-树集（TreeSet）" class="headerlink" title="1.7 树集（TreeSet）"></a>1.7 树集（<code>TreeSet</code>）</h4><p>​	使用树集，必须能够比较元素，必须实现Comparable接口，</p>
+<p>示例程序：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TreeSetTest</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        TreeSet&lt;Item&gt; parts = <span class="keyword">new</span> <span class="title class_">TreeSet</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        parts.add(<span class="keyword">new</span> <span class="title class_">Item</span>(<span class="string">&quot;Toaster&quot;</span>,<span class="number">1234</span>));</span><br><span class="line">        parts.add(<span class="keyword">new</span> <span class="title class_">Item</span>(<span class="string">&quot;Widget&quot;</span>,<span class="number">4562</span>));</span><br><span class="line">        parts.add(<span class="keyword">new</span> <span class="title class_">Item</span>(<span class="string">&quot;Modem&quot;</span>,<span class="number">9912</span>));</span><br><span class="line">        <span class="comment">//treeset，自己本身就是有序的默认排序</span></span><br><span class="line">        System.out.println(parts);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//通过定制比较器按照描述信息排序</span></span><br><span class="line">        TreeSet&lt;Item&gt; sortByDes = <span class="keyword">new</span> <span class="title class_">TreeSet</span>&lt;&gt;(Comparator.comparing(Item::getDes));</span><br><span class="line">        sortByDes.addAll(parts);</span><br><span class="line">        System.out.println(sortByDes);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Item</span> <span class="keyword">implements</span> <span class="title class_">Comparable</span>&lt;Item&gt; &#123;</span><br><span class="line">    <span class="keyword">private</span> String des;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span>  partNumber;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Item</span><span class="params">(String des, <span class="type">int</span> partNumber)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.des = des;</span><br><span class="line">        <span class="built_in">this</span>.partNumber = partNumber;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getDes</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> des;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setDes</span><span class="params">(String des)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.des = des;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getPartNumber</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> partNumber;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setPartNumber</span><span class="params">(<span class="type">int</span> partNumber)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.partNumber = partNumber;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Item&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;des=&#x27;&quot;</span> + des + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, partNumber=&quot;</span> + partNumber +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">hashCode</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> Objects.hash(des,partNumber);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(Object obj)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">this</span>==obj) <span class="keyword">return</span>  <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (obj==<span class="literal">null</span>) <span class="keyword">return</span>  <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (getClass()!=obj.getClass()) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="type">Object</span> <span class="variable">other</span> <span class="operator">=</span> (Item)obj;</span><br><span class="line">        <span class="keyword">return</span> Objects.equals(des,((Item) other).des) &amp;&amp; partNumber==((Item) other).partNumber;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compareTo</span><span class="params">(Item other)</span>&#123;</span><br><span class="line">        <span class="type">int</span> diff=Integer.compare(partNumber,other.partNumber);</span><br><span class="line">        <span class="keyword">return</span> diff!=<span class="number">0</span>?diff:des.compareTo(other.des);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>对以上示例涉及的lambda表达式的输出（<strong>lambda表达式今天一定要学会</strong>）</p>
+<p>思路1：把lambda表达式和匿名内部类作比较</p>
+<p>思路2：首先知道<code>lambda</code>表达式是什么-&gt;其次要知道什么情况下使用<code>lambda</code>表达式-&gt;然后指定场景中练习lambda</p>
+<ul>
+<li><p><code>lambda</code>的出现解决了什么问题？</p>
+<p><code>java8</code>推出了<code>lambda</code>表达式，在此之前通过编写匿名函数比较麻烦</p>
+<p><img src="/2022/04/30/JavaArct/1651545035503.png" alt="1651545035503"></p>
+</li>
+<li><p><code>lambda</code>表达式是什么（包括语法格式）？</p>
+</li>
+<li><p>自定义可以使用lambda表达式的函数接口？</p>
+</li>
+</ul>
+<h4 id="1-8-队列和双端队列"><a href="#1-8-队列和双端队列" class="headerlink" title="1.8 队列和双端队列"></a>1.8 队列和双端队列</h4><h4 id="1-9-Map"><a href="#1-9-Map" class="headerlink" title="1.9 Map"></a>1.9 Map</h4><p>​	当我们需要知道某些关键信息，希望查找与之关联的元素，此时用map是比较好的。</p>
+<p>​	map有两个通用的实现，</p>
+<p>​		①<code>HashMap</code>:hashmap对键进行散列，与值无关</p>
+<p>​		②<code>TreeMap</code>：根据键的顺序将元素组织成一个搜索树，</p>
+<p>​	<strong>针对map有3中视图</strong>：</p>
+<ul>
+<li><p><code>Set&lt;K&gt; keySet()</code> :获取map的所有键</p>
+</li>
+<li><p><code>Collection&lt;V&gt; values()</code>：获取map的所有值</p>
+</li>
+<li><p><code>Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet()</code>：获取map的键值</p>
+</li>
+</ul>
+<h4 id="2-0-LinkedHashSet和LinkedHashMap"><a href="#2-0-LinkedHashSet和LinkedHashMap" class="headerlink" title="2.0 LinkedHashSet和LinkedHashMap"></a>2.0 <code>LinkedHashSet</code>和<code>LinkedHashMap</code></h4>
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          deer-li
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://deer-li.github.io/2022/04/30/JavaArct/" title="Java 集合框架" target="_blank">https://deer-li.github.io/2022/04/30/JavaArct/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">test1</a>
+        			<a href="/categories/Java数据结构//" class="article-tag-list-link color4">Java数据结构</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">test2</a>
+        			<a href="/categories/Java数据结构/集合与接口//" class="article-tag-list-link color1">集合与接口</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Java数据结构/集合与接口/着重实现//" class="article-tag-list-link color5">着重实现</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
     
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://deer-li.github.io/2022/04/30/JavaArct/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2022/04/23/test/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">test</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
           </div>
@@ -273,9 +521,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
