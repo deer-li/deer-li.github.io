@@ -25,7 +25,7 @@
 <meta property="og:image" content="https://deer-li.github.io/2022/04/30/JavaArct/1651303553866.png">
 <meta property="og:image" content="https://deer-li.github.io/2022/04/30/JavaArct/1651545035503.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-05-15T03:05:51.449Z">
+<meta property="article:modified_time" content="2022-05-15T03:15:33.398Z">
 <meta property="article:author" content="deer-li">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://deer-li.github.io/2022/04/30/JavaArct/1652410531012.png">
@@ -215,7 +215,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2.2k字</span>
+      <span class="post-count">2.3k字</span>
     </span>
   </span>
 
@@ -323,7 +323,10 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ConsumerInterface&lt;String&gt; consumer=str-&gt;System.out.println(str);</span><br></pre></td></tr></table></figure>
 
 <p>进一步：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyStream</span>&lt;T&gt;&#123;</span><br><span class="line">	<span class="keyword">private</span> List&lt;T&gt; list;</span><br><span class="line">    ...</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">myForEach</span><span class="params">(ConsumerInterface&lt;T&gt; consumer)</span>&#123;<span class="comment">// 1</span></span><br><span class="line">		<span class="keyword">for</span>(T t : list)&#123;</span><br><span class="line">			consumer.accept(t);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">MyStream&lt;String&gt; stream = <span class="keyword">new</span> <span class="title class_">MyStream</span>&lt;String&gt;();</span><br><span class="line">stream.myForEach(str -&gt; System.out.println(str));</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyStream</span>&lt;T&gt;&#123;</span><br><span class="line">	<span class="keyword">private</span> List&lt;T&gt; list;</span><br><span class="line">    ...</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">myForEach</span><span class="params">(ConsumerInterface&lt;T&gt; consumer)</span>&#123;<span class="comment">// 1</span></span><br><span class="line">		<span class="keyword">for</span>(T t : list)&#123;</span><br><span class="line">			consumer.accept(t);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">MyStream&lt;String&gt; stream = <span class="keyword">new</span> <span class="title class_">MyStream</span>&lt;String&gt;();</span><br><span class="line">stream.myForEach(str -&gt; System.out.println(str));</span><br></pre></td></tr></table></figure>
+
+<p><strong>注：lambda表达式有一个简单写法：当lambda表达式中单纯调用一个方法，不参杂其他操作的时候，可以用<code>类型：：方法名(参数)</code></strong></p>
+</li>
 </ul>
 <h4 id="1-9-队列和双端队列"><a href="#1-9-队列和双端队列" class="headerlink" title="1.9 队列和双端队列"></a>1.9 队列和双端队列</h4><h4 id="2-0-Map"><a href="#2-0-Map" class="headerlink" title="2.0 Map"></a>2.0 Map</h4><p>​	当我们需要知道某些关键信息，希望查找与之关联的元素，此时用map是比较好的。</p>
 <p>​	map有两个通用的实现，</p>
@@ -639,6 +642,14 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">test1</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">test2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">自动装配</a>
               </li>
              
@@ -648,14 +659,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">test1</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">test2</a>
               </li>
             
             <div class="clearfix"></div>
