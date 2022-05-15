@@ -25,7 +25,7 @@
 <meta property="og:image" content="https://deer-li.github.io/2022/04/30/JavaArct/1651303553866.png">
 <meta property="og:image" content="https://deer-li.github.io/2022/04/30/JavaArct/1651545035503.png">
 <meta property="article:published_time" content="2022-04-29T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-05-13T11:51:03.347Z">
+<meta property="article:modified_time" content="2022-05-15T03:05:51.449Z">
 <meta property="article:author" content="deer-li">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://deer-li.github.io/2022/04/30/JavaArct/1652410531012.png">
@@ -215,7 +215,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.4k字</span>
+      <span class="post-count">2.2k字</span>
     </span>
   </span>
 
@@ -224,7 +224,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">6分</span>
+      <span class="post-count">9分</span>
     </span>
   </span>
 </div>
@@ -282,20 +282,50 @@
 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Item</span> <span class="keyword">implements</span> <span class="title class_">Comparable</span>&lt;Item&gt; &#123;</span><br><span class="line">    <span class="keyword">private</span> String des;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span>  partNumber;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Item</span><span class="params">(String des, <span class="type">int</span> partNumber)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.des = des;</span><br><span class="line">        <span class="built_in">this</span>.partNumber = partNumber;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getDes</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> des;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setDes</span><span class="params">(String des)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.des = des;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getPartNumber</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> partNumber;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setPartNumber</span><span class="params">(<span class="type">int</span> partNumber)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.partNumber = partNumber;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Item&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;des=&#x27;&quot;</span> + des + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, partNumber=&quot;</span> + partNumber +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">hashCode</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> Objects.hash(des,partNumber);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(Object obj)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">this</span>==obj) <span class="keyword">return</span>  <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (obj==<span class="literal">null</span>) <span class="keyword">return</span>  <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (getClass()!=obj.getClass()) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="type">Object</span> <span class="variable">other</span> <span class="operator">=</span> (Item)obj;</span><br><span class="line">        <span class="keyword">return</span> Objects.equals(des,((Item) other).des) &amp;&amp; partNumber==((Item) other).partNumber;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compareTo</span><span class="params">(Item other)</span>&#123;</span><br><span class="line">        <span class="type">int</span> diff=Integer.compare(partNumber,other.partNumber);</span><br><span class="line">        <span class="keyword">return</span> diff!=<span class="number">0</span>?diff:des.compareTo(other.des);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>对以上示例涉及的lambda表达式的输出（<strong>lambda表达式今天一定要学会</strong>）</p>
-<p>思路1：把lambda表达式和匿名内部类作比较</p>
+<h4 id="1-8-对以上示例涉及的lambda表达式的输出（lambda表达式今天一定要学会）"><a href="#1-8-对以上示例涉及的lambda表达式的输出（lambda表达式今天一定要学会）" class="headerlink" title="1.8 对以上示例涉及的lambda表达式的输出（lambda表达式今天一定要学会）"></a>1.8 对以上示例涉及的lambda表达式的输出（<strong>lambda表达式今天一定要学会</strong>）</h4><p>思路1：把lambda表达式和匿名内部类作比较</p>
 <p>思路2：首先知道<code>lambda</code>表达式是什么-&gt;其次要知道什么情况下使用<code>lambda</code>表达式-&gt;然后指定场景中练习lambda</p>
 <ul>
 <li><p><code>lambda</code>的出现解决了什么问题？</p>
-<p><code>java8</code>推出了<code>lambda</code>表达式，在此之前通过编写匿名函数比较麻烦</p>
+<p><code>java8</code>推出了<code>lambda</code>表达式，在此之前通过编写匿名函数比较麻烦，所以它的出现解决的第一个问题就是简化了大量匿名内部类的书写，而且使用匿名内部类在编译之后会产生两个类，但是使用lambda表达式之后，编译不会产生针对lambda表达式的类，而是作为主类的一个私有方法</p>
+<p>例1：如果需要新建一个线程，</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// JDK7 匿名内部类写法</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Thread</span>(<span class="keyword">new</span> <span class="title class_">Runnable</span>()&#123;<span class="comment">// 接口名</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span>&#123;<span class="comment">// 方法名</span></span><br><span class="line">		System.out.println(<span class="string">&quot;Thread run()&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;).start();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// JDK8 Lambda表达式写法</span></span><br><span class="line"><span class="comment">//省略了接口名和方法名</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Thread</span>(</span><br><span class="line">		() -&gt; System.out.println(<span class="string">&quot;Thread run()&quot;</span>)</span><br><span class="line">).start();</span><br></pre></td></tr></table></figure>
+
+<p>例2：如果要给一个字符串列表通过自定义比较器，按照字符串长度进行排序:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// JDK7 匿名内部类写法</span></span><br><span class="line">List&lt;String&gt; list = Arrays.asList(<span class="string">&quot;I&quot;</span>, <span class="string">&quot;love&quot;</span>, <span class="string">&quot;you&quot;</span>, <span class="string">&quot;too&quot;</span>);</span><br><span class="line">Collections.sort(list, <span class="keyword">new</span> <span class="title class_">Comparator</span>&lt;String&gt;()&#123;<span class="comment">// 接口名</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(String s1, String s2)</span>&#123;<span class="comment">// 方法名</span></span><br><span class="line">        <span class="keyword">if</span>(s1 == <span class="literal">null</span>)</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(s2 == <span class="literal">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> s1.length()-s2.length();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// JDK8 Lambda表达式写法</span></span><br><span class="line">List&lt;String&gt; list = Arrays.asList(<span class="string">&quot;I&quot;</span>, <span class="string">&quot;love&quot;</span>, <span class="string">&quot;you&quot;</span>, <span class="string">&quot;too&quot;</span>);</span><br><span class="line">Collections.sort(list, (s1, s2) -&gt;&#123;</span><br><span class="line">    <span class="comment">//在省略接口名和方法名的基础上 ，省略参数表的类型，得益于javac的类型推断机制</span></span><br><span class="line">    <span class="keyword">if</span>(s1 == <span class="literal">null</span>)</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(s2 == <span class="literal">null</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> s1.length()-s2.length();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
 <p><img src="/2022/04/30/JavaArct/1651545035503.png" alt="1651545035503"></p>
 </li>
 <li><p><code>lambda</code>表达式是什么（包括语法格式）？</p>
+<p>Lambda表达式，也可以成为闭包，允许把函数作为一个方法的参数，即把函数作为参数传递进方法中。</p>
+<p>lambda表达式的语法格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">（parameters）-&gt;expression</span><br><span class="line"> (parameters) -&gt;(statements;)</span><br></pre></td></tr></table></figure>
+
+<p>lambda表达式的几个重要特征</p>
+<ul>
+<li><strong>可选类型声明</strong>：不需要声明参数类型，编译器可以统一识别参数值。</li>
+<li><strong>可选的参数圆括</strong>：一个参数无需定义圆括号，但多个参数需要定义圆括号。</li>
+<li><strong>可选的大括号</strong>：如果主体包含了一个语句，就不需要使用大括号。</li>
+<li><strong>可选的返回关键字</strong>：如果主体只有一个表达式返回值则编译器会自动返回值，大括号需要指定表达式返回了一个数值。</li>
+</ul>
+<p>lambda表达式的使用条件？</p>
+<ul>
+<li><p><strong>能够使用lambda表达式的依据是必须有相应的函数接口</strong>（函数接口是指内部只有一个抽象方法的接口）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Lambda表达式的书写形式</span></span><br><span class="line"><span class="type">Runnable</span> <span class="variable">run</span> <span class="operator">=</span> () -&gt; System.out.println(<span class="string">&quot;Hello World&quot;</span>);<span class="comment">// 展示了无参函数的简写</span></span><br><span class="line"><span class="type">ActionListener</span> <span class="variable">listener</span> <span class="operator">=</span> event -&gt; System.out.println(<span class="string">&quot;button clicked&quot;</span>);<span class="comment">//展示了有参函数的简写,以及类型推断机制</span></span><br><span class="line"><span class="type">Runnable</span> <span class="variable">multiLine</span> <span class="operator">=</span> () -&gt; &#123;<span class="comment">//代码块的写法</span></span><br><span class="line">    System.out.print(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line">    System.out.println(<span class="string">&quot; Hoolee&quot;</span>);</span><br><span class="line">&#125;;</span><br><span class="line">BinaryOperator&lt;Long&gt; add = (Long x, Long y) -&gt; x + y;<span class="comment">// 类型推断</span></span><br><span class="line">BinaryOperator&lt;Long&gt; addImplicit = (x, y) -&gt; x + y;<span class="comment">// 类型推断</span></span><br></pre></td></tr></table></figure></li>
+</ul>
 </li>
 <li><p>自定义可以使用lambda表达式的函数接口？</p>
-</li>
+<p>​	自定义函数接口只需要编写一个只有一个抽象方法的接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterfeace</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">ConsumerInterface</span>&lt;T&gt;&#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">accept</span><span class="params">(T,t)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用自定义的函数接口书写lambda表达式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ConsumerInterface&lt;String&gt; consumer=str-&gt;System.out.println(str);</span><br></pre></td></tr></table></figure>
+
+<p>进一步：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyStream</span>&lt;T&gt;&#123;</span><br><span class="line">	<span class="keyword">private</span> List&lt;T&gt; list;</span><br><span class="line">    ...</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">myForEach</span><span class="params">(ConsumerInterface&lt;T&gt; consumer)</span>&#123;<span class="comment">// 1</span></span><br><span class="line">		<span class="keyword">for</span>(T t : list)&#123;</span><br><span class="line">			consumer.accept(t);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">MyStream&lt;String&gt; stream = <span class="keyword">new</span> <span class="title class_">MyStream</span>&lt;String&gt;();</span><br><span class="line">stream.myForEach(str -&gt; System.out.println(str));</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h4 id="1-8-队列和双端队列"><a href="#1-8-队列和双端队列" class="headerlink" title="1.8 队列和双端队列"></a>1.8 队列和双端队列</h4><h4 id="1-9-Map"><a href="#1-9-Map" class="headerlink" title="1.9 Map"></a>1.9 Map</h4><p>​	当我们需要知道某些关键信息，希望查找与之关联的元素，此时用map是比较好的。</p>
+<h4 id="1-9-队列和双端队列"><a href="#1-9-队列和双端队列" class="headerlink" title="1.9 队列和双端队列"></a>1.9 队列和双端队列</h4><h4 id="2-0-Map"><a href="#2-0-Map" class="headerlink" title="2.0 Map"></a>2.0 Map</h4><p>​	当我们需要知道某些关键信息，希望查找与之关联的元素，此时用map是比较好的。</p>
 <p>​	map有两个通用的实现，</p>
 <p>​		①<code>HashMap</code>:hashmap对键进行散列，与值无关</p>
 <p>​		②<code>TreeMap</code>：根据键的顺序将元素组织成一个搜索树，</p>
@@ -308,7 +338,7 @@
 <li><p><code>Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet()</code>：获取map的键值</p>
 </li>
 </ul>
-<h4 id="2-0-LinkedHashSet和LinkedHashMap"><a href="#2-0-LinkedHashSet和LinkedHashMap" class="headerlink" title="2.0 LinkedHashSet和LinkedHashMap"></a>2.0 <code>LinkedHashSet</code>和<code>LinkedHashMap</code></h4>
+<h4 id="2-1-LinkedHashSet和LinkedHashMap"><a href="#2-1-LinkedHashSet和LinkedHashMap" class="headerlink" title="2.1 LinkedHashSet和LinkedHashMap"></a>2.1 <code>LinkedHashSet</code>和<code>LinkedHashMap</code></h4>
     
 
     
@@ -609,14 +639,6 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">test1</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">test2</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">自动装配</a>
               </li>
              
@@ -626,6 +648,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">test1</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">test2</a>
               </li>
             
             <div class="clearfix"></div>
