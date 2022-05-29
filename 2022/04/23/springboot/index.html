@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://deer-li.github.io/2022/04/23/springboot/1651040385835.png">
 <meta property="og:image" content="https://deer-li.github.io/2022/04/23/springboot/1651133602470.png">
 <meta property="article:published_time" content="2022-04-22T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-05-03T12:03:28.700Z">
+<meta property="article:modified_time" content="2022-05-29T11:07:37.615Z">
 <meta property="article:author" content="deer-li">
 <meta property="article:tag" content="自动装配">
 <meta property="article:tag" content="springboot">
@@ -226,7 +226,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2.5k字</span>
+      <span class="post-count">2.7k字</span>
     </span>
   </span>
 
@@ -235,7 +235,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">10分</span>
+      <span class="post-count">11分</span>
     </span>
   </span>
 </div>
@@ -394,8 +394,33 @@
 <p><img src="/2022/04/23/springboot/1651133602470.png" alt="1651133602470"></p>
 </li>
 </ul>
-<h4 id="2-3-SpringBoot整合JDBC和Druid"><a href="#2-3-SpringBoot整合JDBC和Druid" class="headerlink" title="2.3 SpringBoot整合JDBC和Druid"></a>2.3 <code>SpringBoot</code>整合<code>JDBC</code>和<code>Druid</code></h4><p>​	springboot默认使用的是hikar</p>
-<h4 id="2-4-SpringBoot整合Mybatis"><a href="#2-4-SpringBoot整合Mybatis" class="headerlink" title="2.4 SpringBoot整合Mybatis"></a>2.4 <code>SpringBoot</code>整合Mybatis</h4>
+<h4 id="2-3-SpringBoot整合JDBC和Druid"><a href="#2-3-SpringBoot整合JDBC和Druid" class="headerlink" title="2.3 SpringBoot整合JDBC和Druid"></a>2.3 <code>SpringBoot</code>整合<code>JDBC</code>和<code>Druid</code></h4><p>​	<code>springboot</code>默认使用的是<code>hikar</code></p>
+<h4 id="2-4-SpringBoot整合Mybatis"><a href="#2-4-SpringBoot整合Mybatis" class="headerlink" title="2.4 SpringBoot整合Mybatis"></a>2.4 <code>SpringBoot</code>整合<code>Mybatis</code></h4><h4 id="2-5-SpringBoot整合SpringSecurity"><a href="#2-5-SpringBoot整合SpringSecurity" class="headerlink" title="2.5 SpringBoot整合SpringSecurity"></a>2.5 <code>SpringBoot</code>整合<code>SpringSecurity</code></h4><p><strong>注意：由于<code>SpringSecurity</code>版本更新，体验上会有些不同</strong></p>
+<ul>
+<li><p>环境搭建</p>
+<ul>
+<li>新建<code>SpringBoot</code>项目，导入<code>springsecurity</code>的依赖</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-security<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>引入<code>thymeleaf</code>依赖</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.thymeleaf<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>thymeleaf-spring5<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.thymeleaf.extras<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>thymeleaf-extras-java8time<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>引入<code>thymeleaf</code>和<code>springsecurity</code>的组合依赖</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.thymeleaf.extras<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>thymeleaf-extras-springsecurity4<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.0.2.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用户认证和授权</p>
+</li>
+<li><p>注销及权限控制</p>
+</li>
+<li><p>记住我及首页定制</p>
+</li>
+</ul>
+
     
 
     
